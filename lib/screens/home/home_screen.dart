@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 import './gradient_background.dart';
 
-class QuizApp extends StatefulWidget {
-  const QuizApp({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
-  @override
-  State<QuizApp> createState() => _QuizAppState();
-}
-
-class _QuizAppState extends State<QuizApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: GradientBackground.purple(
         child: Center(
           child: Column(mainAxisSize: MainAxisSize.min, children: [
-            Image.asset("assets/images/quiz-logo.png"),
+            Image.asset(
+              "assets/images/quiz-logo.png",
+              width: 300,
+              color: const Color.fromARGB(150, 255, 255, 255),
+            ),
             const SizedBox(height: 20.0),
             const Text(
               "Learn Flutter the fun way!",
@@ -25,9 +24,10 @@ class _QuizAppState extends State<QuizApp> {
               ),
             ),
             const SizedBox(height: 20.0),
-            ElevatedButton(
+            OutlinedButton.icon(
               onPressed: () {},
-              style: ElevatedButton.styleFrom(
+              icon: const Icon(Icons.arrow_right),
+              style: OutlinedButton.styleFrom(
                 backgroundColor: Colors.purple,
                 foregroundColor: Colors.white,
                 padding:
@@ -37,7 +37,7 @@ class _QuizAppState extends State<QuizApp> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              child: const Text("Start Quiz"),
+              label: const Text("Start Quiz"),
             ),
           ]),
         ),
