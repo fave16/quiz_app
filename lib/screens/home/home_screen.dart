@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import './gradient_background.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen(this.startQuiz, {super.key});
+
+  final void Function() startQuiz;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ class HomeScreen extends StatelessWidget {
             ),
             const SizedBox(height: 20.0),
             OutlinedButton.icon(
-              onPressed: () {},
+              onPressed: startQuiz,
               icon: const Icon(Icons.arrow_right),
               style: OutlinedButton.styleFrom(
                 backgroundColor: Colors.purple,
