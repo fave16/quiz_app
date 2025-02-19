@@ -11,25 +11,29 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  Widget? activeScreen;
+  var activeScreen = "home-screen";
 
-  @override
-  void initState() {
-    activeScreen = HomeScreen(switchScreen);
-    super.initState();
-  }
+  // void initState() {
+  //   activeScreen = HomeScreen(switchScreen);
+  //   super.initState();
+  // }
 
   void switchScreen() {
     setState(() {
-      activeScreen = const QuestionScreen();
+      activeScreen = "qustions-screen";
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    Widget screenWidget = HomeScreen(switchScreen);
+
+    if (activeScreen == "questions-screen") {
+      screenWidget = const QuestionScreen();
+    }
     return Scaffold(
       body: GradientBackground.purple(
-        child: activeScreen,
+        child: screenWidget,
       ),
     );
   }
