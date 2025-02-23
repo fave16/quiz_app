@@ -26,14 +26,14 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20.0),
-            OutlinedButton.icon(
+            ElevatedButton.icon(
               onPressed: startQuiz,
               icon: const Icon(Icons.arrow_right),
-              style: OutlinedButton.styleFrom(
+              style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.purple,
                 foregroundColor: Colors.white,
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                  const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                 textStyle: const TextStyle(
                   fontSize: 15.0,
                   fontWeight: FontWeight.bold,
