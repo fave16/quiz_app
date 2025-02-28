@@ -3,10 +3,11 @@ import '../data/questions.dart';
 import '../questions_summary.dart';
 
 class ResultsScreen extends StatelessWidget {
-  const ResultsScreen({super.key, required this.chosenAnswers });
+  const ResultsScreen(
+      {super.key, required this.chosenAnswers, required this.onRestart});
 
   final List<String> chosenAnswers;
-  // final void Function() onRestart;
+  final void Function() onRestart;
 
   List<Map<String, Object>> getSummaryData() {
     final List<Map<String, Object>> summary = [];
@@ -37,13 +38,12 @@ class ResultsScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("You have answered $numCorrectQuestions out of $numTotalQuestions questions correctly"),
+            Text(
+                "You have answered $numCorrectQuestions out of $numTotalQuestions questions correctly"),
             const SizedBox(height: 30),
             QuestionsSummary(summaryData),
             const SizedBox(height: 30),
-            TextButton(
-              onPressed: (){}, 
-              child: const Text("Restrat Quiz"))
+            TextButton(onPressed: onRestart, child: const Text("Restart Quiz"))
           ],
         ),
       ),
