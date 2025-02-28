@@ -22,13 +22,13 @@ class HomeScreen extends StatelessWidget {
               "Learn Flutter the fun way!",
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 15.0,
+                fontSize: 20.0,
               ),
             ),
             const SizedBox(height: 20.0),
             ElevatedButton.icon(
               onPressed: startQuiz,
-              icon: const Icon(Icons.arrow_right),
+              icon: const Icon(Icons.chevron_right_outlined ,color: Colors.white),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.purple,
                 foregroundColor: Colors.white,
